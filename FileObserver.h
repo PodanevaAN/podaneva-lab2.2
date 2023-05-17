@@ -8,7 +8,7 @@ private:
     long _size = -1; //размер файла. -1 если файл не существует
 
 public slots:
-    void update(long size) override; //Переопределяем метод
+    void update(long size) override; //// Переопределение метода update() из интерфейса IObserver
 };
 
 
