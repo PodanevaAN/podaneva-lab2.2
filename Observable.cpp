@@ -3,7 +3,7 @@
 
 void Observable::attach(IObserver *observer) {
     observers.push_back(observer); //Добавляет нового наблюдателя
-     QObject::connect(this,&Observable::notifySize,observer,&IObserver::update);
+     QObject::connect(this,&Observable::notifySize,observer,&IObserver::update); //Устанавливает связь между сигналом и слотом update у каждого наблюдателя
 }
 
 void Observable::detach(IObserver *observer) {
@@ -16,5 +16,5 @@ void Observable::notify(long size) { //Оповещает всех наблюд�
 //            observer->update(size); //Вызываем функцию для обновления информации
 //        }
 //    }
-    emit notifySize(size);
+    emit notifySize(size); //Испускает сигнал notifySize с переданным размером, который будет обработан наблюдателями
 }
