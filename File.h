@@ -7,12 +7,12 @@
 
 class File : public Observable {
 private:
-    std::string _name;
-    bool _exist = false;
-    long _size = -1;
+    std::string _name;// Приватное поле класса, хранящее имя файла
+    bool _exist = false;// Приватное поле класса, указывающее, существует ли файл (изначально установлено в false)
+    long _size = -1;// Приватное поле класса, хранящее размер файла (изначально установлено в -1)
 
 public:
-    explicit File(const std::string &name);
+    explicit File(const std::string &name);// Определение явного конструктора класса, принимающего строку в качестве аргумента
 
     void checkFile(); //Метод проверки информации по файлу
 };
