@@ -4,7 +4,7 @@
 
 class IObserver : public QObject  { // Определение интерфейса IObserver, который наследует от класса QObject
     Q_OBJECT
-public slots:
+public slots: //Оределяем слот
     virtual void update(long size) = 0; //Виртуальный общий метод для всех наблюдателей
 };
 
