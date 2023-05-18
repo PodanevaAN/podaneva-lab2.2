@@ -1,8 +1,8 @@
 #include "File.h"
 #include "sys/stat.h"
 
-File::File(const std::string &name) {
-    _name = name;
+File::File(const std::string &name) {// Определение конструктора класса File, принимающего строку в качестве аргумента
+    _name = name;// Присваивание значению переменной _name переданную строку
 }
 
 void File::checkFile() {
