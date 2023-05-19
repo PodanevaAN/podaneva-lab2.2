@@ -9,7 +9,10 @@ void Observable::attach(IObserver *observer) {
 }
 
 void Observable::detach(IObserver *observer) {
-    observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end()); //Удаляет наблюдателя
+    observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end()); //Удаляет наблюдателz
+    QObject::disconnect(this,&Observable::signalSize,observer,&IObserver::updateSize);
+    QObject::disconnect(this,&Observable::signalExist,observer,&IObserver::updateExist);
+
 }
 
 void Observable::send(long size, bool exist) { //Оповещает всех наблюдателей
